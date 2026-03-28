@@ -1,6 +1,6 @@
 {
   "name": "playwright-step-decorator-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript @step decorator and ESLint plugin for Playwright test steps in Page Object Models",
   "license": "MIT",
   "author": "Emanuele Minotto",
