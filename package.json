@@ -1,0 +1,86 @@
+{
+  "name": "playwright-step-decorator-plugin",
+  "version": "0.1.0",
+  "description": "TypeScript @step decorator and ESLint plugin for Playwright test steps in Page Object Models",
+  "license": "MIT",
+  "author": "Emanuele Minotto",
+  "keywords": [
+    "playwright",
+    "decorator",
+    "step",
+    "page-object",
+    "pom",
+    "eslint",
+    "eslint-plugin",
+    "typescript",
+    "testing",
+    "automation"
+  ],
+  "homepage": "https://github.com/EmanueleMinotto/playwright-step-decorator-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmanueleMinotto/playwright-step-decorator-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EmanueleMinotto/playwright-step-decorator-plugin/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./decorator": {
+      "types": "./dist/decorator/index.d.ts",
+      "import": "./dist/decorator/index.mjs",
+      "require": "./dist/decorator/index.js"
+    },
+    "./eslint-plugin": {
+      "types": "./dist/eslint-plugin/index.d.ts",
+      "import": "./dist/eslint-plugin/index.mjs",
+      "require": "./dist/eslint-plugin/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "dependencies": {
+    "@alduino/humanizer": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.40.0 || ^2.0.0",
+    "eslint": "^8.0.0 || ^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@typescript-eslint/rule-tester": "^8.0.0",
+    "@typescript-eslint/utils": "^8.0.0",
+    "eslint": "^9.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  }
+}
