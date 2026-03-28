@@ -29,6 +29,7 @@ function applyStep(
 ): AnyMethod {
   const paramNames = extractParamNames(target);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return function (this: any, ...args: unknown[]): unknown {
     let stepTitle: string;
 

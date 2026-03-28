@@ -127,7 +127,7 @@ export function buildCustomStepTitle(customName: string, params: ParamDescriptor
  * Extracts parameter names from a function's source code via toString().
  * Handles camelCase, default values and rest params; skips destructured params.
  */
-export function extractParamNames(fn: Function): string[] {
+export function extractParamNames(fn: (...args: unknown[]) => unknown): string[] {
   const fnStr = fn.toString();
   const match = fnStr.match(/\(([^)]*)\)/);
   if (!match || !match[1].trim()) return [];
